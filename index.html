@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Media Player con js</title>
+    <link rel="stylesheet" href="./assets/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>MediaPlayer JS</h1>
+      <p>an extension media player</p>
+    </header>
+    <main class="container">
+      <video class="movie">
+        <source src="./assets/BigBuckBunny.mp4" />
+      </video>
+      <button id="playButton">Play/Pause</button>
+    </main>
+
+    <script>
+      const video = document.querySelector("video");
+      const button = document.querySelector("button");
+
+      function MediaPlayer(config) {
+        this.media = config.el;
+      }
+
+      MediaPlayer.prototype.play = function() {
+        this.media.play();
+      };
+
+      MediaPlayer.prototype.pause = function() {
+        this.media.pause();
+      };
+
+      MediaPlayer.prototype.togglePlay = function() {
+        if (this.media.paused) {
+          this.play();
+        } else {
+          this.pause();
+        }
+      };
+
+      const player = new MediaPlayer({ el: video });
+      button.onclick = () => player.togglePlay();
+    </script>
+  </body>
+</html>
