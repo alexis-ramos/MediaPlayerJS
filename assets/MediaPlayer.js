@@ -26,7 +26,7 @@ MediaPlayer.prototype._initPlugins = function() {
   // player.muted();
 
   this.plugins.forEach(plugin => {
-    plugin.run(this);
+    plugin.run(player);
   });
 };
 
@@ -54,13 +54,13 @@ MediaPlayer.prototype.unmute = function() {
   this.media.muted = false;
 };
 
-MediaPlayer.prototype.toggleMute = function() {
-  if (this.media.muted) {
-    this.unmute();
-  } else {
-    this.mute();
-  }
-  console.log(this);
-};
+// MediaPlayer.prototype.toggleMute = function() {
+//   if (this.media.muted) {
+//     this.unmute();
+//   } else {
+//     this.mute();
+//   }
+//   console.log(this);
+// };
 
 export default MediaPlayer;
