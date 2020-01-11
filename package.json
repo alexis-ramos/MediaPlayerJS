@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Proyecto del curso de javascript profesional",
   "scripts": {
-    "start": "live-server"
+    "start": "parcel index.html "
   },
   "keywords": [
     "platzi"
@@ -11,6 +11,10 @@
   "author": "Alexis Ramos",
   "license": "MIT",
   "devDependencies": {
-    "live-server": "^1.2.1"
-  }
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.7.4"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }
